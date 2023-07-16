@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <link href="/styles/tailwind.css" rel="stylesheet">
+        <link href="/styles/style.css" rel="stylesheet">
+        <link href="/styles/design.css" rel="stylesheet">
+        <script>
+            function f()
+            {
+                document.getElementById("pw").focus();
+            }
+        </script>
+    </head>
+    <body onload="f()">
+        <div class="container ml-2 " style="margin-left: 50rem;
+        margin-top: 6rem;
+        box-shadow: saddlebrown;
+        box-shadow: 2px,red;
+        box-shadow: 10px 10px blue;
+        padding: 4rem;
+        width: 24rem;">
+            <div class="container">
+                <img class="h-20 w-20 ml-5" style="margin-left: 5rem;" src="/tu logo.png">
+                <form method="post" style="margin-top: 3rem;" action="push_notifications">
+                    <label for="pw"><p style="color:blue;">email</p></label><br>
+                    <input type="mail" style="border:1px solid blue; border-radius: 4px; color: blue; margin-bottom: 2rem;" id="pw" name="mail"><br>
+                    <label for="roll"><p style="color:blue;">roll</p></label><br>
+                    <input type="text" style="border:1px solid blue; border-radius: 4px; color: blue; margin-bottom: 2rem;" id="roll" name="roll"><br>
+                    <button type="submit" class="btn mt-4">Submit</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>     

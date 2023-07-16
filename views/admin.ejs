@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="/styles/tailwind.css" rel="stylesheet">
+        <link href="/styles/style.css" rel="stylesheet">
+        <link href="/styles/design.css" rel="stylesheet">
+        <script>
+            function loader()
+            {
+                document.getElementById("b1").focus();
+            }
+            function news()
+            {
+                document.getElementById("b1").focus();
+                let n=`
+                <form method="post" action="push_notice">
+                <label for="title">Title</label><br>
+                <input type="text" name="title" id="title" style="margin-bottom:2rem;margin-top:1rem;border:2px solid blue;color:blue; border-radius: 4px;">
+                <br>
+                <label for="date">Date of Publishing</label><br>
+                <input type="date" name="date" id="title" style="margin-bottom:2rem;margin-top:1rem;border:2px solid blue;color:blue; border-radius: 4px;">
+                <br>
+                <label for="details">Details</label><br>
+                <textarea rows="4" cols="100" name="details" id="title" style="margin-bottom:2rem;margin-top:1rem;border:2px solid blue;color:blue; border-radius: 4px;"></textarea>
+                <br>
+                <button type="submit" class="btn">Push</button>
+            </form>
+                `;
+                document.getElementById("content-f").innerHTML=n;
+
+            }
+            function faculty()
+            {
+                document.getElementById("b2").focus();
+                let f=`
+                    <form method='POST' action='push_faculty'>
+                        <label for="name"><p style="color:blue;">Full Name</p></label><br>
+                        <input type="text" style="border:1px solid blue; border-radius: 4px; color: blue; margin-bottom: 1.5rem;" id="name" name="name"><br>
+                        <label for="designation"><p style="color:blue;">Designation</p></label><br>
+                        <input type="text" style="border:1px solid blue; border-radius: 4px; color: blue; margin-bottom: 1.5rem;" id="designation" name="designation"><br>
+                        <label for="Alma"><p style="color:blue;">Alma</p></label><br>
+                        <input type="text" style="border:1px solid blue; border-radius: 4px; color: blue; margin-bottom: 1.5rem;" id="alma" name="alma"><br>
+                        <label for="specialization"><p style="color:blue;">Specialization</p></label><br>
+                        <input type="text" style="border:1px solid blue; border-radius: 4px; color: blue; margin-bottom: 1.5rem;" id="specialization" name="specialization"><br>
+                        <label for="phone"><p style="color:blue;">Phone</p></label><br>
+                        <input type="text" style="border:1px solid blue; border-radius: 4px; color: blue; margin-bottom: 1.5rem;" id="phone" name="phone"><br>
+                        <label for="email"><p style="color:blue;">Email</p></label><br>
+                        <input type="mail" style="border:1px solid blue; border-radius: 4px; color: blue; margin-bottom: 1.5rem;" id="email" name="email"><br>
+                        <label for="dp"><p style="color:blue;">Display Image</p></label><br>
+                        <input type="file" style="border:1px solid blue; border-radius: 4px; color: blue; margin-bottom: 1.5rem;" id="dp" name="image"><br>
+                        <button type="submit" class="btn mt-4">Push</button>
+                    </div>
+                `
+                document.getElementById("content-f").innerHTML=f;
+            }
+            function student()
+            {
+                document.getElementById("b3").focus();
+                let s=`
+                <form method='POST' action='push_student'>
+                        <label for="name"><p style="color:blue;">Full Name</p></label><br>
+                        <input type="text" style="border:1px solid blue; border-radius: 4px; color: blue; margin-bottom: 1.5rem;" id="name" name="name"><br>
+                        <label for="roll"><p style="color:blue;">Enrollment No</p></label><br>
+                        <input type="text" style="border:1px solid blue; border-radius: 4px; color: blue; margin-bottom: 1.5rem;" id="roll" name="roll"><br>
+                        <label for="cgpa"><p style="color:blue;">CGPA</p></label><br>
+                        <input type="text" style="border:1px solid blue; border-radius: 4px; color: blue; margin-bottom: 1.5rem;" id="cgpa" name="cgpa"><br>
+                        <label for="skills"><p style="color:blue;">Skills</p></label><br>
+                        <textarea id='skills' style="border:1px solid blue; border-radius: 4px; color: blue; margin-bottom: 1.5rem;" name='skills' rows='5' cols='30'></textarea><br>
+                        <label for="dp"><p style="color:blue;">Display Image</p></label><br>
+                        <input type="file" style="border:1px solid blue; border-radius: 4px; color: blue; margin-bottom: 1.5rem;" id="dp" name="image"><br>
+                        <button type="submit" class="btn mt-4">Push</button>
+                    </div>
+                `
+                document.getElementById("content-f").innerHTML=s;
+            }
+        </script>
+    </head>
+    <body onload="loader()">
+       <div class="container mx-auto">
+        <nav class="container bg-gray-100 shadow-md">
+            <img class="inline h-20 w-20 ml-3" src="/tu logo.png">
+            <div class="container mx-auto inline p-5 ml-20 " id="nv">
+                <ul class="inline">
+                    <li class="inline ml-3" style="color: gray;margin-left: 10rem;">
+                        <a href="mca">MCA</a>
+                    </li>
+                    <li class="inline ml-3" style="color: gray;">
+                        <a href="people">People</a>
+                    </li>
+                    <li class="inline ml-3" style="color:gray">
+                        <a href="gallery">Gallery</a>
+                    </li>
+                    <li class="inline ml-3" style="font-size: 1.5rem;">
+                        <a href="admin">Admin</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="buttons">
+            <button class="btn" id="b1" onclick="news()">Notice</button>
+            <button class="btn" id="b2" onclick="faculty()">Faculty</button>
+            <button class="btn" id="b3" style="margin-left:8px" onclick="student()">Students</button>
+            </div>
+        <div class="container mt-4" style="margin-top: 4rem;
+        padding: 4rem;
+        box-shadow: -1px -1px blue;
+        width: 64rem" id="content-f">
+            <form method="post" action="push_notice">
+                <label for="title">Title</label><br>
+                <input type="text" name="title" id="title" style="margin-bottom:2rem;margin-top:1rem;border:2px solid blue;color:blue; border-radius: 4px;">
+                <br>
+                <label for="date">Date of Notice</label><br>
+                <input type="date" name="date" id="title" style="margin-bottom:2rem;margin-top:1rem;border:2px solid blue;color:blue; border-radius: 4px;">
+                <br>
+                <label for="details">Details</label><br>
+                <textarea rows="4" cols="100" name="details" id="title" style="margin-bottom:2rem;margin-top:1rem;border:2px solid blue;color:blue; border-radius: 4px;"></textarea>
+                <br>
+                <button type="submit" class="btn">Push</button>
+            </form>
+        </div>
+        </div>
+        <footer class="container relative mx-auto p-5" style="margin-top: 2rem;
+        background: #B2EBF2;
+        box-shadow: 10rem;
+        box-shadow: 2px 0px 0px lightblue;
+        border-radius: 2px;">
+        <div class="container w-8">
+            <h4 class="f_a" style="color: black; font-size: 18px;">Important Links</h4>
+            <ul>
+                <li>
+                    <a class="f_a" href="http://www.tezu.ac.in/">
+                        Tezpur University
+                    </a>
+                </li>
+                <li>
+                    <a class="f_a" href="http://www.tezu.ernet.in/dcompsc/">
+                        Computer Science and Engineering
+                    </a>
+                </li>
+                <li>
+                    <a class="f_a" href="https://www.tezu.ernet.in/Library/">
+                        Central Library
+                    </a>
+                </li>   
+            </ul>
+        </div>
+        <hr class="bg-black">
+        </footer>
+    </body>
+</html>

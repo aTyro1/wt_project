@@ -1,0 +1,70 @@
+@font-face{
+    font-family: NunitoSans;
+    src:url("/fonts/static/Vollkorn-Regular.ttf");
+}
+#nv{
+    margin-left:26rem;
+}
+#c_image{
+    height: 45rem;
+    width: 75rem;
+    margin-left: 10rem;
+    margin-right: -47rem;
+    margin-top:0.5rem;
+}
+#c_content{
+    margin-top:-12rem;
+}
+.cindicator{
+    border-radius: 2px;
+}
+body{
+    font-family: NunitoSans;
+}
+.btn{
+    border: 1px solid blue;
+    border-radius: 4px;
+    color: blue;
+    padding: 4px;
+}
+.btn:hover{
+    border: 1px solid white;
+    border-radius: 4px;
+    color: white;
+    background-color: blue;
+    padding: 4px;
+}
+.btn:focus{
+    border: 1px solid white;
+    border-radius: 4px;
+    color: white;
+    background-color: blue;
+    padding: 4px;   
+}
+#b2{
+    margin-left:0.5rem;
+}
+#buttons{
+    margin-left:45rem;
+    margin-top:1rem;
+}
+#det{
+    margin-top: 2rem;
+}
+.g_img{
+    height: 21rem;
+    border-radius: 2rem;
+}
+.f_a{
+    color: #0303f9;
+    text-shadow: 1px 1px #286791;
+    font-size: 13.5px;
+}
+.news_i{
+    background-color: rgb(27, 172, 164);
+    margin-bottom: 1rem;
+}
+#n{
+    height: auto;
+    margin-top: 2rem;
+}

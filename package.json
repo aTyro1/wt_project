@@ -1,0 +1,32 @@
+{
+  "name": "wt_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "build": "postcss public/styles/tailwind.css -o public/styles/style.css",
+    "start": "nodeman"
+  },
+  "author": "aman",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "bootstrap": "^5.3.0",
+    "document": "^0.4.7",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mongodb": "^5.6.0",
+    "mongoose": "^7.2.4",
+    "multer": "^1.4.5-lts.1",
+    "mysql": "^2.18.1",
+    "nodemailer": "^6.9.3",
+    "nodeman": "^1.1.2",
+    "postcss-cli": "^10.1.0",
+    "tw-elements": "^1.0.0-beta2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.3.2"
+  }
+}

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="/styles/tailwind.css" rel="stylesheet">
+        <link href="/styles/style.css" rel="stylesheet">
+        <link href="/styles/design.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
+        <script>
+          var i=0;
+          let first_image=`IMG_1175.jpg`;
+          let second_image=`c2.jpeg`;
+          let third_image=`footer-image.jpg`;
+          let first_image_title="MCA FAREWELL'23";
+          let first_image_content="On 10th July 2023, MCA organised the FAREWELL for outgoing batch of 2023. <a href='#'>click here to see images of the farewell</a>";
+          let second_image_title='Work Shop on Distributed Computer Network on 20/06/23';
+          let second_image_content='Computer Science and Engineering Department organised Workshop on Computer Network on Friday. More than 30 students participated in the workshop';
+          let third_image_title='Evening View from Department Terrace';
+          let image_title=[first_image_title,second_image_title,third_image_title];
+          let image_content=[first_image_content,second_image_content,first_image_content];
+          let images=[first_image,second_image,third_image];
+          function loadImage()
+          {
+            document.getElementById('c_image').src=images[i%3];
+            document.getElementById('c_content').innerHTML=image_title[i%3];
+            document.getElementById('content').innerHTML=image_content[i%3];
+            let indicators=document.getElementsByClassName('cindicator');
+            console.log(indicators.length);
+            let j=i%3;
+            let k=0;
+            while(k<indicators.length)
+            {
+                console.log(indicators[k]);
+                if(k==j)
+                {
+                    indicators[k].style.padding='1px';
+                }
+                else
+                {
+                    indicators[k].style.padding='0.25px';
+                }
+                k++;
+            }
+            i++;
+          }
+          function startCrousal()
+          {
+            setInterval(loadImage,4000);
+          }
+          
+        </script>
+    </head>
+    <body onload="startCrousal()">
+       <div class="container mx-auto">
+        <nav class="container bg-gray-100 shadow-md">
+            <img class="inline h-20 w-20 ml-3" src="/tu logo.png">
+            <div class="container mx-auto inline p-5 ml-20 " id="nv">
+                <ul class="inline">
+                    <li class="inline ml-3" style=" margin-left:10rem;
+                    font-size: 1.5rem;">
+                        <a href="mca">MCA</a>
+                    </li>
+                    <li class="inline ml-3" id="l2">
+                        <a href="people">People</a>
+                    </li>
+                    <li class="inline ml-3" id="l3">
+                        <a href="gallery" >Gallery</a>
+                    </li>
+                    <li class="inline ml-3" id="l4">
+                        <a href="admin">Admin</a>
+                    </li>
+                </ul>
+        </nav>
+        <div id="body">
+            <div class="container" >      
+                <img src="/IMG_1175.jpg" id="c_image" class="block rounded-lg shadow-md bg-gray-100"   alt="..." />
+                <div  class="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
+              <h5 id='c_content' class="text-xl">
+                  MCA FAREWELL'23
+              </h5>
+              <p id="content">
+                  On 10th July 2023, MCA organised the FAREWELL for outgoing batch of 2023. <a href='#'>click here to see images of the farewell</a>
+              </p>
+              <button type="button" style="padding:1px" class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none cindicator"></button>
+              <button type="button" class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none cindicator"></button>
+              <button type="button" class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none cindicator"></button>
+          </div>
+              </div>
+             <div class="container mt-3" id="n">
+                <hr>
+              <caption>In News</caption>
+              <div class="grid grid-cols-3 gap-2 mt-2">
+                <%
+                    for (i of news) 
+                    {
+                %>
+                  <div class="col-span-3">
+                      <div
+                      class="block rounded-lg news_i p-6">
+                      <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50 inline">
+                     <%=i.title%>
+                       </h5>
+                       <p class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50 inline" style="margin-left: 1rem; font-size: 15px;">
+                        <%=i.date_of_publishing.toLocaleDateString()%>
+                       </p>
+                      <p class="mb-4 mt-2 text-base text-neutral-600 dark:text-neutral-200">
+                     <%=i.details%>
+                      </p>
+                      </div>
+                  </div>
+                  <%}%>
+             </div>
+             
+       </div>
+       <div class="container mt-5" id="n">
+        <hr>
+        <caption>Current Schedule</caption>
+            <div class="mt-2">
+                <table style="border: 2px solid blue;" cellspacing="5" cellpadding="5">
+                    <thead>
+                      <tr>
+                        <th>DAY</th>
+                        <th>9:10 AM - 10:10 AM</th>
+                        <th>10:30 AM - 11:30 AM</th>
+                        <th>11:30 AM - 12:30 PM</th>
+                        <th>12:30 PM - 1:30 PM</th>
+                        <th>2:30 PM - 3:30 PM</th>
+                        <th>3:30 PM - 4:30 PM</th>
+                        <th>4:30 PM - 5:30 PM</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>MONDAY</td>
+                        <td>OS/CR6</td>
+                        <td>FLNN/CR6 PR/CR1</td>
+                        <td>DAA/CR6 ES/CR1</td>
+                        <td>DBMS/CR6</td>
+                        <td>AFM/DB9</td>
+                        <td>ES LAB</td>
+                        <td>ES LAB</td>
+                      </tr>
+                      <tr>
+                        <td>TUESDAY</td>
+                        <td>OS/CR6</td>
+                        <td>FLNN/CR6 PR/CR1</td>
+                        <td>DAA/CR6 ES/CR1</td>
+                        <td>DBMS/CR6</td>
+                        <td>AFM/DB9</td>
+                        <td>ES LAB</td>
+                        <td>ES LAB</td>
+                      </tr>
+                      <tr>
+                        <td>WEDNESDAY</td>
+                        <td>OS/CR6</td>
+                        <td>FLNN/CR6 PR/CR1</td>
+                        <td>DAA/CR6 ES/CR1</td>
+                        <td>DBMS/CR6</td>
+                        <td>AFM/DB9</td>
+                        <td>ES LAB</td>
+                        <td>ES LAB</td>
+                      </tr>
+                      <tr>
+                        <td>THRUSDAY</td>
+                        <td>OS/CR6</td>
+                        <td>FLNN/CR6 PR/CR1</td>
+                        <td>DAA/CR6 ES/CR1</td>
+                        <td>DBMS/CR6</td>
+                        <td>AFM/DB9</td>
+                        <td>ES LAB</td>
+                        <td>ES LAB</td>
+                      </tr>
+                      <tr>
+                        <td>FRIDAY</td>
+                        <td>OS/CR6</td>
+                        <td>FLNN/CR6 PR/CR1</td>
+                        <td>DAA/CR6 ES/CR1</td>
+                        <td>DBMS/CR6</td>
+                        <td>AFM/DB9</td>
+                        <td>ES LAB</td>
+                        <td>ES LAB</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <form action="notifications" method="post">
+                  <button type="submit" class="btn" style="margin-top: 2rem;">class reminder </button>
+                  </form>
+            </div>
+       </div>
+       <footer class="container relative mx-auto p-5" style="margin-top: 2rem;
+        background: #B2EBF2;
+        box-shadow: 10rem;
+        box-shadow: 2px 0px 0px lightblue;
+        border-radius: 2px;">
+        <div class="container">
+            <h4 class="f_a" style="color: black; font-size: 18px;">Important Links</h4>
+            <ul>
+                <li>
+                    <a class="f_a" href="http://www.tezu.ac.in/">
+                        Tezpur University
+                    </a>
+                </li>
+                <li>
+                    <a class="f_a" href="http://www.tezu.ernet.in/dcompsc/">
+                        Computer Science and Engineering
+                    </a>
+                </li>
+                <li>
+                    <a class="f_a" href="https://www.tezu.ernet.in/Library/">
+                        Central Library
+                    </a>
+                </li>   
+            </ul>
+        </div>
+        <hr class="bg-black">
+        </footer>
+    </div>
+    </body>
+</html>
